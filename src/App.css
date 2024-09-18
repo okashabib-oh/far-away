@@ -1,0 +1,88 @@
+.navbar {
+  text-align: center;
+}
+
+.navbar h1 {
+  text-transform: uppercase;
+}
+
+.formsec {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin-right: 15px;
+  transition: all 0.3s ease-in;
+}
+
+input:hover {
+  border-color: #646cff;
+  transition: all 0.3s ease-in;
+}
+
+select {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin-right: 15px;
+  transition: all 0.3s ease-in;
+  background-color: #121212;
+}
+
+select:hover {
+  border-color: #646cff;
+  transition: all 0.3s ease-in;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+  padding: 2px 10px;
+}
+
+.delete:hover {
+  border-color: red;
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+}
+
+.items-list {
+  display: flex;
+  align-items: center;
+}
+
+.stats {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.stats p {
+  color: #646cff;
+  border-radius: 10px;
+  border-color: #646cff;
+}
+
+.sort-clear {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.sort-clear button {
+  padding: 4px;
+  font-size: small;
+  font-weight: 400;
+}
+
+.sort-clear select {
+  padding: 2px;
+}
