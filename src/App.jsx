@@ -7,25 +7,34 @@ import Stats from './components/Stats'
 
 function App() {
   const [items, setItems] = useState([])
+  const [packed, setPacked] = useState([])
 
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault()
     const itemQuantity = e.target[0].value;
     const itemName = e.target[1].value;
     setItems([...items, { quantity: itemQuantity, name: itemName }])
     e.target.reset()
   }
-  function deleteItem(i) {
+
+  const deleteItem = (i) => {
     items.splice(i, 1)
     setItems([...items])
   }
 
-  function packedItems(){
-    
+  const handleCheck = (ind) => {
+    console.log(ind);
+    const newItems = items.map((item, i) =>
+      i === ind ? { ...item, checked: !item.checked } : item
+    );
+    setItems(newItems);
+
+    const updatedCheckedItems = newItems.filter(item => item.checked);
+    setPacked(updatedCheckedItems);
   }
 
-  function clearList() {
-    confirm('Are you sure you want to clear all items?') ? setItems([]) : ''
+  const clearList = () => {
+    confirm('Are you sure you want to clear all items?') && setItems([])
   }
 
   return (
@@ -34,8 +43,8 @@ function App() {
       <hr />
       <FormSec submission={handleSubmit} />
       <hr />
-      <Items items={items} dele={deleteItem} clear={clearList} />
-      <Stats items={items} />
+      <Items items={items} dele={deleteItem} clear={clearList} ch={handleCheck} />
+      <Stats items={items} packed={packed} />
     </>
   )
 }
