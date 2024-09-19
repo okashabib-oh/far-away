@@ -1,5 +1,7 @@
 .navbar {
   text-align: center;
+  background-color: #646cff;
+  border-radius: 15px;
 }
 
 .navbar h1 {
@@ -9,6 +11,11 @@
 .formsec {
   display: flex;
   justify-content: space-evenly;
+  background-color: black;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-top: 5px;
+  border-radius: 10px;
 }
 
 input {
@@ -56,6 +63,7 @@ select:hover {
 .items-list {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .stats {
@@ -85,4 +93,28 @@ select:hover {
 
 .sort-clear select {
   padding: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+  .formsec {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .formsec input {
+    margin-top: 10px;
+  }
+
+  .formsec button {
+    padding: 8px;
+  }
+
+  .items{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
 }

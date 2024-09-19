@@ -23,7 +23,6 @@ function App() {
   }
 
   const handleCheck = (ind) => {
-    console.log(ind);
     const newItems = items.map((item, i) =>
       i === ind ? { ...item, checked: !item.checked } : item
     );
@@ -34,15 +33,13 @@ function App() {
   }
 
   const clearList = () => {
-    confirm('Are you sure you want to clear all items?') && setItems([])
+    confirm('Are you sure you want to clear all items?') && (setItems([], setPacked([])))
   }
 
   return (
     <>
       <NavBar />
-      <hr />
       <FormSec submission={handleSubmit} />
-      <hr />
       <Items items={items} dele={deleteItem} clear={clearList} ch={handleCheck} />
       <Stats items={items} packed={packed} />
     </>
