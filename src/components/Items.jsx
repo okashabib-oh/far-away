@@ -9,7 +9,7 @@ function Items({ items, dele, ch, clear }) {
                             <p style={{
                                 textDecoration: it.checked ? 'line-through' : 'none'
                             }}>{it.quantity} {it.name}</p>
-                            <button className="delete" onClick={() => dele(i)}>x</button>
+                            <button title="Delete" className="delete" onClick={() => dele(i)}>x</button>
                         </div>
                     )
                 })}
